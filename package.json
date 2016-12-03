@@ -1,0 +1,19 @@
+{
+  "name": "xo",
+  "version": "1.0.0",
+  "description": "XO game powered by Socket.IO",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "EhsaanF",
+  "license": "GPL2",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "debug": "^2.3.2",
+    "express": "^4.14.0",
+    "helmet": "^3.1.0",
+    "mongoose": "^4.6.8",
+    "socketio": "^1.0.0"
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>XO &ndash; See how good Node is for XO!</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+        <link rel="stylesheet" href="/static/css/app.css">
+    </head>
+    <body>
+        <div id="pageBG"></div>
+        <main>
+            <header>
+                <h1>XO</h1>
+                <h4>Now powered from fastest and most reliable realtime technology</h4>
+            </header>
+
+            <article>
+                <div class="container">
+                    <a href="/play" class="play">Play Now!</a>
+                    <p>against a random opponent</p>
+                </div>
+            </article>
+
+            <div id="playground" style="display: none;">
+                <div id="gameStatus">
+                    <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                    </svg><br>
+                    <span id="playerStatus" class="flashing">Identifiying you...</span>
+                </div>
+                <div id="askPlayerName" style="display: none;">
+                    <strong style="color: #000;font-size: 1.2em;">All right, tell us what should we call you?</strong>
+                    <div class="container">
+                        <div class="row">
+                            <input type="text" id="inputPlayer" maxlength="50" placeholder="Be polite">
+                        </div>
+                    </div>
+                    <p style="margin-top: 5px;">Please be aware that by accepting your name:
+                        <br>&bullet; Your identification will be stored in your browser.
+                        <br>&bullet; Your IP address will be saved for analytics purposes.
+                        <br>&bullet; You can't change your name after choosing one.
+                    </p>
+                    <button type="button" id="submitName">Accept</button>
+                </div>
+                <div id="playFrame">
+                    <div class="container">
+                        <p id="xoStatus">Starting the game...</p>
+                        <p id="turnStatus"></p>
+                        <div id="xo">
+                            <div class="row">
+                                <div class="col-xs-4 cell" id="a1"></div>
+                                <div class="col-xs-4 cell" id="a2"></div>
+                                <div class="col-xs-4 cell" id="a3"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 cell" id="b1"></div>
+                                <div class="col-xs-4 cell" id="b2"></div>
+                                <div class="col-xs-4 cell" id="b3"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 cell" id="c1"></div>
+                                <div class="col-xs-4 cell" id="c2"></div>
+                                <div class="col-xs-4 cell" id="c3"></div>
+                            </div>
+                        </div><br>
+                        <div id="controls" style="text-align: center;display: none;">
+                            <button type="button" id="repeat">Repeat</button> 
+                            <button type="button" onclick="location.href='/';">New Game</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/static/js/jquery.js"></script>
+        <script src="/static/js/particleground.js"></script>
+        <script src="/static/js/app.js"></script>
+    </body>
+</html>
